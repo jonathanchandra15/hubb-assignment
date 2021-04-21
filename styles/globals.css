@@ -3,19 +3,93 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@layer base {
+  html {
+    @apply flex;
+    @apply justify-center;
+  }
+
+  body {
+    width: 414px;
+  }
+
+  main {
+    padding: 38px 32px 45px 32px;
+    @apply bg-orange;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer components {
+  .text {
+    @apply text-dark-blue;
+    @apply font-semibold;
+    @apply font-sans;
+  }
 
-* {
-  box-sizing: border-box;
+  #profile-section {
+    margin-bottom: 26px;
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+  }
+  
+  .profile-picture {
+    width: 115px;
+    height: 115px;
+    margin-bottom: 13px;
+    @apply rounded-full;
+  }
+  
+  .profile-name {
+    @apply flex ;
+    @apply items-center;
+  }
+  
+  .instagram-icon {
+    font-size: 0.688rem!important;
+    margin-right: 5px;
+  }
+
+  #product-section {
+    @apply grid;
+    @apply gap-4;
+    @apply grid-cols-2;
+    @apply mb-8;
+  }
+
+  .product-button {
+    padding: 6px 22px 5px 21px;
+    @apply text-product-button-text; 
+    @apply bg-orange;
+    @apply rounded-lg;
+  }
+  
+  .product-card {
+    width: 167px;
+    @apply rounded-lg;
+    @apply p-2;
+    @apply bg-white;
+  }
+
+  .product-picture {
+    width: 151px;
+    height: 151px;
+    @apply rounded-lg; 
+    @apply object-cover;
+    @apply mb-2;
+  }
+
+  #link-section {
+    @apply grid; 
+    @apply gap-y-4;
+  }
+
+  .social-button {
+    padding: 19px 0px;
+    @apply text-sm;
+    @apply bg-white;
+    @apply w-full;
+    @apply rounded-lg ;
+  }
+
 }
